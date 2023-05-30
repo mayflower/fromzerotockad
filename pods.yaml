@@ -1,0 +1,40 @@
+# frontend
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: frontend
+  name: frontend
+spec:
+  containers:
+    - image: frontend:latest
+      imagePullPolicy: Never
+      name: frontend
+      ports:
+        - name: http
+          containerPort: 8090
+          protocol: TCP
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+
+---
+
+# backend
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: backend
+  name: backend
+spec:
+  containers:
+    - image: backend:latest
+      imagePullPolicy: Never
+      name: backend
+      ports:
+        - name: http
+          containerPort: 8090
+          protocol: TCP
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+
