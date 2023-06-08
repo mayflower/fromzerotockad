@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: backend
+  name:  backend 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend 
+  template:
+    metadata:
+      labels:
+        app: backend 
+    spec:
+      containers:
+      - image: backend:latest
+        imagePullPolicy: Never
+        name: backend
+        ports:
+        - name: http
+          containerPort: 8089
+          protocol: TCP
+
