@@ -53,8 +53,8 @@ Der Type `ClusterIP` gibt an, dass die IP-Adresse innerhalb des Clusters genutzt
 Es gibt sonst noch die folgenden Typen:
 
 ### NodePort 
-Der NodePort öffnet für jede Node einen Port und wird am häufigsten für interne nicht-HTTP Kommunikation zwischen Services
-eingesetzt.
+NodePort ist eine Option, um externen Traffic in ein Kubernetes-Cluster zuzulassen. Dabei stehen jedoch nur Portnummern
+im Bereich von 30000 bis 32767 zur Verfügung.
 
 ### LoadBalancer 
 Der Loadbalancer erstellt einen ähnlichen Service wie ClusterIP und öffnet einen Port auf jeder Node, wie NodePort es tut. 
